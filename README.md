@@ -56,7 +56,7 @@ You'll need to add the OpenAI and Google Cloud API keys, but the latter is optio
 ### Step 2: Add a valid key for the API call
 
 In your project directory, in the `lingshot-keys` file:
-
+//
 ```properties
 CHAT_GPT_KEY = "<Your_OpenAI_API_Key>"
 GOOGLE_TRANSLATE_KEY = "<Your_Google_Cloud_API_Key>_(OPTIONAL)"
