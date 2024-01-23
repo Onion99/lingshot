@@ -38,7 +38,7 @@ The **Lingshot** app follows the
 
 # Easy App Building Tutorial
 
-### Step 1: Get API Keys
+### Step 1: Get API Keys//
 
 You'll need to add the OpenAI and Google Cloud API keys, but the latter is optional.
 
