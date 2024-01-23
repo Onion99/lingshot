@@ -54,7 +54,7 @@ You'll need to add the OpenAI and Google Cloud API keys, but the latter is optio
   4. Generate a new API key, ensuring to set restrictions for security.
 
 ### Step 2: Add a valid key for the API call
-//
+
 In your project directory, in the `lingshot-keys` file:
 
 ```properties
