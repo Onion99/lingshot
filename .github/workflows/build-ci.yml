@@ -15,7 +15,7 @@ env:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latesta
 
     steps:
       - name: Setup checkout
