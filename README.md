@@ -42,27 +42,34 @@ The **Lingshot** app follows the
 
 You'll need two API keys—one from Google Cloud and one from OpenAI.
 
-- **OpenAI API Key:**
-  1. Head to [OpenAI Developer](https://openai.com/).
-  2. Sign up and create a new project.
-  3. Retrieve your API key from project settings.
-
-- **(OPTIONAL) Google Cloud API Key:**
+- **Google Cloud API Key:**
   1. Visit [Google Cloud Console](https://console.cloud.google.com/).
   2. Create or select your project.
   3. Navigate to "APIs & Services" > "Credentials."
   4. Generate a new API key, ensuring to set restrictions for security.
 
-### Step 2: Add a valid key for the API call
+- **OpenAI API Key:**
+  1. Head to [OpenAI Developer](https://openai.com/).
+  2. Sign up and create a new project.
+  3. Retrieve your API key from project settings.
 
-In your project directory, in the `lingshot-keys` file:
+### Step 2: Create a Properties File
+
+In your project directory, make a file named `lingshot-keys` and add:
 
 ```properties
-CHAT_GPT_KEY = "Your_OpenAI_API_Key>"
-GOOGLE_TRANSLATE_KEY = "<Your_Google_Cloud_API_Key_(OPTIONAL)>"
+CHAT_GPT_KEY = "<Your_OpenAI_API_Key>"
+GOOGLE_TRANSLATE_KEY = "<Your_Google_Cloud_API_Key>"
 ```
 
-Replace `<Your_OpenAI_API_Key>` with your actual API key.
+Replace `<Your_OpenAI_API_Key>` and `<Your_Google_Cloud_API_Key>` with your actual API keys.
+
+### Step 3: Firebase Configuration
+
+1. Create an account on [Firebase](https://console.firebase.google.com/).
+2. Create a new project in the Firebase Console.
+3. Add an Android app to the project and follow the instructions to generate the `google-services.json` file.
+4. Import the `google-services.json` file into your app directory.
 
 ## Tech-Stack
 
