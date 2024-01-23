@@ -48,10 +48,6 @@ jobs:
       - name: Setup checkout
         uses: actions/checkout@v4
 
-      - name: Set firebase google services
-        run:
-          echo "$FIREBASE_GOOGLE_SERVICES" >> ./app/src/release/google-services.json
-
       - name: Set environment variables
         run: |
           chmod +x .github/set-key.sh
