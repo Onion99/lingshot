@@ -20,12 +20,6 @@ package com.lingshot.subtitle_presentation
 import android.graphics.Bitmap
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.lingshot.analytics.constant.LANGUAGE_UND_VALUE
-import com.lingshot.analytics.constant.ORIGINAL_CONTENT
-import com.lingshot.analytics.constant.TRANSLATE_CONTENT
-import com.lingshot.analytics.constant.TYPE_SCREEN_CAPTURE_ITEM
-import com.lingshot.analytics.constant.TYPE_SCREEN_CAPTURE_SUBTITLE_VALUE
-import com.lingshot.analytics.helper.AnalyticsEventHelper
 import com.lingshot.common.helper.launchWithStatus
 import com.lingshot.common.util.formatText
 import com.lingshot.designsystem.component.ActionCropImage
@@ -48,7 +42,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SubtitleViewModel @Inject constructor(
-    private val analyticsEventHelper: AnalyticsEventHelper,
     private val textIdentifierRepository: TextIdentifierRepository,
     private val translateApiUseCase: TranslateApiUseCase,
 ) : ViewModel() {
@@ -103,13 +96,7 @@ class SubtitleViewModel @Inject constructor(
                                     Subtitle(
                                         translateApiUseCase(textFormatted).toString(),
                                         bitmap,
-                                    ).also {
-                                        analyticsEventHelper.sendSelectItem(
-                                            TRANSLATE_CONTENT to it.text,
-                                            ORIGINAL_CONTENT to textFormatted,
-                                            TYPE_SCREEN_CAPTURE_ITEM to TYPE_SCREEN_CAPTURE_SUBTITLE_VALUE,
-                                        )
-                                    }
+                                    )
                                 }
 
                                 else -> null
@@ -132,14 +119,6 @@ class SubtitleViewModel @Inject constructor(
             val status = textIdentifierRepository.fetchTextRecognizer(bitmap)
             if (status is Status.Success) {
                 val text = status.data.toString()
-
-                if (text.isEmpty()) {
-                    analyticsEventHelper.sendSelectItem(
-                        TRANSLATE_CONTENT to LANGUAGE_UND_VALUE,
-                        ORIGINAL_CONTENT to text,
-                        TYPE_SCREEN_CAPTURE_ITEM to TYPE_SCREEN_CAPTURE_SUBTITLE_VALUE,
-                    )
-                }
                 block(text.isNotEmpty())
             }
         }

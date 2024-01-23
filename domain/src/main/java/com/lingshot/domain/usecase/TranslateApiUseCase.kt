@@ -16,6 +16,7 @@
 package com.lingshot.domain.usecase
 
 import androidx.annotation.Keep
+import com.lingshot.domain.BuildConfig
 import com.lingshot.domain.PromptChatGPTConstant.PROMPT_TRANSLATE
 import com.lingshot.domain.model.ChatGPTPromptBodyDomain
 import com.lingshot.domain.model.MessageDomain
@@ -36,7 +37,7 @@ class TranslateApiUseCase @Inject constructor(
 ) {
 
     suspend operator fun invoke(text: String): String? {
-        return if (getLanguageFrom()?.enabledLanguage == true) {
+        return if (getLanguageFrom()?.enabledLanguage == true || BuildConfig.DEBUG) {
             val requestBody = ChatGPTPromptBodyDomain(
                 messages = listOf(
                     MessageDomain(
