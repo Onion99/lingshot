@@ -27,6 +27,10 @@ This project's primary focus is to promote a modular, scalable, maintainable, an
 
 The design principles and architectural choices applied in this project are ideally suited for larger teams and extended application lifecycles. This application not only showcases functionalities but also serves as a testament to how well-structured and well-written code acts as a stable backbone for scalable and maintainable software development projects.
 
+# Download
+
+[![Lingshot Stable](https://img.shields.io/github/release/CharlesMoreira1/lingshot.svg?maxAge=3600&label=Stable&labelColor=06599d&color=043b69)](https://github.com/CharlesMoreira1/lingshot/releases)
+
 # Architecture
 
 The **Lingshot** app follows the
