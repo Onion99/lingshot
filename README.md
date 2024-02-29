@@ -27,10 +27,6 @@ This project's primary focus is to promote a modular, scalable, maintainable, an
 
 The design principles and architectural choices applied in this project are ideally suited for larger teams and extended application lifecycles. This application not only showcases functionalities but also serves as a testament to how well-structured and well-written code acts as a stable backbone for scalable and maintainable software development projects.
 
-## Download
-
-<a href='https://play.google.com/store/apps/details?id=com.lingshot.languagelearn'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width=240/></a>
-
 # Architecture
 
 The **Lingshot** app follows the
